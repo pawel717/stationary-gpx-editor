@@ -11,7 +11,7 @@ longitude = "0.000000"
 
 
 def parse_command_line_arguments():
-    global input_file_path, output_file_path, lattitude, longitude
+    global input_file_path, output_file_path, latitude, longitude
     try:
         opts, args = getopt.getopt(sys.argv[1:], "", ["gpx=", "lat=", "lon="])
     except getopt.GetoptError:
@@ -23,11 +23,11 @@ def parse_command_line_arguments():
             name, extension = os.path.splitext(input_file_path)
             output_file_path = name + "_edited" + extension
         if opt == "--lat":
-            lattitude = arg
+            latitude = arg
         if opt == "--lon":
             longitude = arg
 
-    return input_file_path, output_file_path, lattitude, longitude
+    return input_file_path, output_file_path, latitude, longitude
 
 
 def save_file(xml_tree, file_path):
